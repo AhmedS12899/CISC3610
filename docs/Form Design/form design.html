@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="form design.js"> </script>
+    <link rel="stylesheet" href="form design.css">
+</head>
+<body onload="starter()">
+
+<form>
+  <label for="title">Title: </label>
+  <input type="text" id="title" name="title" maxlength="40" size= "33" oninput="saveTitle()"><br><br>
+  <label for="content">Note Content:</label> <br>
+  <textarea id="content" name="content" rows="10" cols="80" class="round" oninput="saveContent()"></textarea> <br>
+  <input type="button" value="Clear" onclick="clearText()">
+</form>
+<div class="weblink">
+  
+</div>
+</body>
+<footer><a href="../index.html">Home</a></footer>
+</html>

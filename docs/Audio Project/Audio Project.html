@@ -1,0 +1,119 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Audio Project.css">
+    <h3><a href="../index.html">Home</a></h3>
+</head>
+
+<body>
+    <button id="btnGiveCommand" onclick="stoptext()">Speak</button>
+    <br>
+    <p> Press the button and say the name into the mic.
+        A picture will show up corresponding to that name and be checked off. </p>
+    <span id="message"></span> <br>
+    <input id="chkbill" type="checkbox">
+    BILL
+    <input id="chkkobe" type="checkbox">
+    KOBE
+    <input id="chkkanye" type="checkbox">
+    KANYE
+    <input id="chkmichael" type="checkbox">
+    MICHAEL
+    <input id="chkjack" type="checkbox">
+    JACK <br>
+    <br>
+    <center>
+        <img src="Images/Bill.jpg" alt="Bill Nye" width="800" height="600" id="bill" style="display:none;">
+        <img src="Images/Kobe.webp" alt="Kobe" width="800" height="600" id="kobe" style="display:none;">
+        <img src="Images/Kanye.webp" alt="Kanye" width="800" height="600" id="kanye" style="display:none;">
+        <img src="Images/Michael.webp" alt="Michael" width="800" height="600" id="michael" style="display:none;">
+        <img src="Images/Jack.webp" alt="Jack" width="800" height="600" id="jack" style="display:none;">
+    </center>
+    <script>
+        var message = document.querySelector('#message');
+
+        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+        var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+
+        var grammar = '#JSGF V1.0;';
+
+        var recognition = new SpeechRecognition();
+        var speechRecognitionList = new SpeechGrammarList();
+        speechRecognitionList.addFromString(grammar, 1);
+        recognition.grammars = speechRecognitionList;
+        recognition.lang = 'en-US';
+        recognition.interimResults = false;
+
+        recognition.onresult = function (event) {
+            var last = event.results.length - 1;
+            var command = event.results[last][0].transcript;
+            message.textContent = 'Voice Input: ' + command + '.';
+
+            if (command.toLowerCase() === 'bill') {
+                document.querySelector('#chkbill').checked = true;
+                document.querySelector('#bill').style.display = "block";
+                document.querySelector('#kobe').style.display = "none";
+                document.querySelector('#kanye').style.display = "none";
+                document.querySelector('#michael').style.display = "none";
+                document.querySelector('#jack').style.display = "none";
+            }
+            else if (command.toLowerCase() === 'kobe') {
+                document.querySelector('#chkkobe').checked = true;
+                document.querySelector('#kobe').style.display = "block";
+                document.querySelector('#kanye').style.display = "none";
+                document.querySelector('#michael').style.display = "none";
+                document.querySelector('#jack').style.display = "none";
+                document.querySelector('#bill').style.display = "none";
+            }
+            else if (command.toLowerCase() === 'kanye') {
+                document.querySelector('#chkkanye').checked = true;
+                document.querySelector('#kanye').style.display = "block";
+                document.querySelector('#michael').style.display = "none";
+                document.querySelector('#jack').style.display = "none";
+                document.querySelector('#bill').style.display = "none";
+                document.querySelector('#kobe').style.display = "none";
+            }
+            else if (command.toLowerCase() === 'michael') {
+                document.querySelector('#chkmichael').checked = true;
+                document.querySelector('#michael').style.display = "block";
+                document.querySelector('#jack').style.display = "none";
+                document.querySelector('#bill').style.display = "none";
+                document.querySelector('#kobe').style.display = "none";
+                document.querySelector('#kanye').style.display = "none";
+            }
+            else if (command.toLowerCase() === 'jack') {
+                document.querySelector('#chkjack').checked = true;
+                document.querySelector('#jack').style.display = "block";
+                document.querySelector('#bill').style.display = "none";
+                document.querySelector('#kobe').style.display = "none";
+                document.querySelector('#kanye').style.display = "none";
+                document.querySelector('#michael').style.display = "none";
+            }
+        };
+
+        recognition.onspeechend = function () {
+            recognition.stop();
+        };
+
+        recognition.onerror = function (event) {
+            message.textContent = 'Error occurred in recognition: ' + event.error;
+        }
+
+        document.querySelector('#btnGiveCommand').addEventListener('click', function () {
+            recognition.start();
+        });
+        function stoptext() {
+            document.getElementById("btnGiveCommand").innerHTML = "Stop";
+        };
+
+
+    </script>
+
+
+</body>
+
+</html>

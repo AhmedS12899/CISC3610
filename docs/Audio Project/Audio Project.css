@@ -1,0 +1,19 @@
+body {
+    text-align: center;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(259deg, rgba(255, 255, 255, 1) 0%, rgba(160, 159, 187, 1) 25%, rgba(87, 141, 179, 1) 50%, rgba(23, 88, 98, 1) 75%, rgba(0, 0, 0, 1) 100%);
+}
+
+button {
+    padding: 10px;
+    background-color: #0c06c0;
+    color: #FFFFFF;
+    border: 0px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10;
+}
+h3{
+    text-align: left;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Audio.css">
+    <a href="../index.html">Home</a>
+<body>
+    <audio id="myAudio">
+        <source src="Animal Sounds/Bird.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="myAudio2">
+        <source src="Animal Sounds/Cat.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="myAudio3">
+        <source src="Animal Sounds/Cow.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="myAudio4">
+        <source src="Animal Sounds/Dog.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="myAudio5">
+        <source src="Animal Sounds/Pig.mp3" type="audio/mpeg">
+    </audio>
+        <h2>Ahmed's Audio Lab</h2>
+
+    <img src="Animal Pics/Bird.png" alt="Snow" >
+    <img src="Animal Pics/Cat.png" alt="Snow" >
+    <img src="Animal Pics/Cow.png" alt="Snow" >
+    <img src="Animal Pics/Dog.png" alt="Snow" >
+    <img src="Animal Pics/Pig.png" alt="Snow" >
+
+
+    <button class="block" onclick="playAudio()" type="button">Bird</button>
+    <button class="block" onclick="playAudio2()" type="button">Cat</button>
+    <button class="block" onclick="playAudio3()" type="button">Cow</button>
+    <button class="block" onclick="playAudio4()" type="button">Dog</button>
+    <button class="block" onclick="playAudio5()" type="button">Pig</button>
+
+
+    <script>
+        var x = document.getElementById("myAudio");
+        var y = document.getElementById("myAudio2");
+        var a = document.getElementById("myAudio3");
+        var b = document.getElementById("myAudio4");
+        var c = document.getElementById("myAudio5");
+
+        function playAudio() {
+            x.play();
+        }
+
+        function playAudio2() {
+            y.play();;
+        }
+
+        function playAudio3() {
+            a.play();
+        }
+
+        function playAudio4() {
+            b.play();;
+        }
+
+        function playAudio5() {
+            c.play();
+        }
+    </script>
+
+</body>
+</html>
