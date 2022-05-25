@@ -1,6 +1,14 @@
+body{
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
-.heading{
-    background-color: rgb(228, 236, 235);   
-    width: fit-content;
-    text-align: center;    
+table{
+    padding: 1%;
+    text-align: center;
+    border: 1px solid black;
+}
+td, th{
+    padding-bottom: 3%;
 }
